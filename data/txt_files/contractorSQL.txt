@@ -1,0 +1,3 @@
+COMREG01	Roombo	Winny
+COMREG02	Jayo	Benedicta
+COMREG03	Trunyx	Raddy
