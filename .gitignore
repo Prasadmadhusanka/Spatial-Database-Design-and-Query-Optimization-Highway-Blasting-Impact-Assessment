@@ -3,3 +3,6 @@ Final Report-DBMS.pdf
 
 # Ignore all PDF files
 *.pdf
+
+# Ignore folder
+useful_images/
