@@ -1,0 +1,15 @@
+Problem 09
+
+Designers want to find out the minimum length for proposed overpass bridge which should be
+constructed for permanently evacuating the existing road due to the highway construction.
+--------------------------------------------------------------------------------------------------------
+Query 09
+
+SELECT r.rdid,
+       St_intersection(r.rdposition, se.seposition),
+       Round(St_length(St_intersection(r.rdposition, se.seposition)) * 100000)
+       AS
+       "Length"
+FROM   road r
+       JOIN section se
+         ON St_intersects(r.rdposition, se.seposition);

@@ -1,0 +1,16 @@
+Problem 03
+
+During the construction of highway trace, if any structures are laying within the highway trace
+those should be evacuated permanently. Therefore designers want to know the location of structure,
+strId, type of structure, Number of floors of the structures which are located within the proposed
+highway trace.
+--------------------------------------------------------------------------------------------------------
+Query 03
+
+SELECT s.strid,
+       s.type,
+       s.nofloors,
+       s.location
+FROM   structure s
+WHERE  St_within(s.location, (SELECT St_union(se.seposition)
+                              FROM   section se));

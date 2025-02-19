@@ -1,0 +1,18 @@
+Problem 10
+
+Here in problem 03 designers identified the three structures (H01, H21, H79) should be evacuated
+permanently because those structures have been located within the proposed highway trace. For
+selecting the lands to re-locate, designers used criteria as follows.
+
+Lands should be selected within the intersection area of minimum bounding circle of all religious
+places and minimum bounding circle of all schools. Hence designers want to show the intersection
+area visually.
+--------------------------------------------------------------------------------------------------------
+Query 10
+
+SELECT type,
+       St_minimumboundingcircle(St_union(location)) AS MinimumBoundingCircle
+FROM   structure
+WHERE  type = 'Religious Place'
+        OR type = 'School'
+GROUP  BY type; 

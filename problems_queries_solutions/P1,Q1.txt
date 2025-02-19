@@ -1,0 +1,20 @@
+Problem 01
+
+For allocating the explosives for each highway section, Explosive controller of the region wants to
+get details of seId, seChainage, SeInchargeEng, Number of blasting locations of each section,
+Summation of estimated blasting rock volume of each blasting location.
+--------------------------------------------------------------------------------------------------------
+Query 01
+
+SELECT se.seid,
+       se.sechainage,
+       se.seinchargeeng,
+       Count(b.blid)                  AS "No of Blasting
+Locations",
+       COALESCE(Sum(b.blquantity), 0) AS "Blasting Qty"
+FROM   section se
+       LEFT JOIN blastinglocation b
+              ON se.seid = b.seid
+GROUP  BY se.seid
+ORDER  BY 4 DESC,
+          5 DESC; 

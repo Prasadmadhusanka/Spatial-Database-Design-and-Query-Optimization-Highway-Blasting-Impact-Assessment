@@ -1,0 +1,15 @@
+Problem 08
+
+Before commencing the blasting activities, it is proposed that the pre-condition survey of nearby
+structures should be started on Eastern direction. Hence team which will carry out the pre-condition
+survey wants to know which structure is located in most Eastern direction and its coordinates in
+EPSG 5234 projected coordinate system.
+--------------------------------------------------------------------------------------------------------
+Query 08
+
+SELECT strid,
+       location,
+       St_astext(St_transform(location, 5234))
+FROM   structure
+ORDER  BY St_x(location) DESC
+LIMIT  1; 

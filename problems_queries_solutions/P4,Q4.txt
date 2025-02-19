@@ -1,0 +1,17 @@
+Problem 04
+
+During the blasting time, people who are living in the 300m distance from blasting location should
+be temporary evacuated for safety purposes. Therefore blasting Engineer who allocated the
+blId=”BL01” wants to know position of structures, strId, type which are located within 300m
+distance interval from blasting location blId=”BL01”.
+--------------------------------------------------------------------------------------------------------
+Query 04
+
+SELECT s.strid,
+       s.type,
+       s.location
+FROM   structure s
+WHERE  St_within(s.location, (SELECT St_buffer(( b.blposition ), 0.00001 * 300,
+                                            'endcap=round join=round')
+                              FROM   blastinglocation b
+                              WHERE  b.blid = 'BL01')); 

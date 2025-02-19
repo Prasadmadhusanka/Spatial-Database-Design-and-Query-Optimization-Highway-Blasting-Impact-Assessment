@@ -1,0 +1,17 @@
+Problem 06
+
+With parallel to the highway project, the roads which are located near the highway trace should be
+developed. Therefore, roads type called “Soil” and “Other” should be converted as Tar paved roads.
+Designers want to know the location of roads of above mentioned rdGrade, rdId and their length in
+meters to nearest integer value.
+--------------------------------------------------------------------------------------------------------
+Query 06
+
+SELECT   rdid,
+         rdgrade,
+         Round(St_length(rdposition)*100000) AS "Length",
+         St_union(rdposition)                AS "Selected Roads"
+FROM     road
+WHERE    rdgrade = 'Other'
+OR       rdgrade='Soil'
+GROUP BY rdid;ORDER BY 3 limit 4; 

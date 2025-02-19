@@ -1,0 +1,14 @@
+Problem 07
+
+The area surrounded by proposed highway trace is highly affected water scarcity problem.
+Therefore as a CSR project, consultant and contractor parties are introduced new water supply
+project. Find the GPS point of suitable location (Centroid point) to establish water tank by
+considering the locations of the all the structures type=”Religious Place, “School”, “Hospital”.
+--------------------------------------------------------------------------------------------------------
+Query 07
+
+SELECT St_astext(St_centroid(St_union(location))) AS "Location for Water Tank"
+FROM   structure
+WHERE  type = 'Religious Place'
+        OR type = 'School'
+        OR type = 'Hospital';

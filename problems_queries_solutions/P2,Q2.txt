@@ -1,0 +1,27 @@
+Problem 02A
+
+During the blasting time, it has been decided to evacuate the peoples within 300m distance interval
+from each blasting location temporary. So incharge engineers of all sections want to know how
+many structures are located within 300m distance interval from each blasting location.
+--------------------------------------------------------------------------------------------------------
+Query 02A
+
+SELECT b.blid,
+       Count(s.*) AS "No of Structures"
+FROM   structure s
+       JOIN blastinglocation b
+         ON St_within(s.location,
+       St_buffer(b.blposition, 300 * 0.00001, 'endcap=round join=round'))
+GROUP  BY b.blid; 
+
+========================================================================================================
+Problem 02B
+
+Incharge engineers of all sections want to look situation of structures within 300m distance interval
+with 300m buffer zone from each blasting location.
+--------------------------------------------------------------------------------------------------------
+Query 02B
+
+SELECT blid,
+       St_buffer(blposition, 300 * 0.00001, 'endcap=round join=round')
+FROM   blastinglocation; 

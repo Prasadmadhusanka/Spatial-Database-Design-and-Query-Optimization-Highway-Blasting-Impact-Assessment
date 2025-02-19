@@ -1,0 +1,19 @@
+Problem 05
+
+During the blasting time, the Blastmate (instrument which used to measure the vibration effect due
+to blasting) should be fixed in nearest four structures to the each blasting locations. Therefore
+blasting engineer who allocated the blId=”BL03” wants to know the strID, noFloors, distance from
+blasting location, location of nearest structures to blasting location blId=”BL03”.
+--------------------------------------------------------------------------------------------------------
+Query 05
+
+SELECT s.strid,
+       s.nofloors,
+       Round(St_length(St_shortestline(s.location, b.blposition)) * 100000) AS
+       "Distance",
+       s.location
+FROM   structure s,
+       blastinglocation b
+WHERE  b.blid = 'BL03'
+ORDER  BY 3
+LIMIT  4; 
