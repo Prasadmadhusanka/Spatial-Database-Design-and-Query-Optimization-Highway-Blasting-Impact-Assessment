@@ -1,4 +1,4 @@
-# Spatial Database Design and Query Optimization - Highway Blasting Impact Assessment - Using PostgreSQL, PostGIS and ArcGIS Pro 
+## Spatial Database Design and Query Optimization - Highway Blasting Impact Assessment - Using PostgreSQL, PostGIS and ArcGIS Pro 
 
 
 This repository focuses on sharing data files and solutions for the design, implementation, and optimization of a spatial database for a project assessing the impact of highway blasting using **PostgreSQL with PostGIS and ArcGIS Pro**.  
