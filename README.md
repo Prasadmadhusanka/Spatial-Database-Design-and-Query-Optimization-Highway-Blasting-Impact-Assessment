@@ -26,5 +26,6 @@ This folder contains solutions to **10 problems** identified in the project.
 
 ### **Prerequisites**  
 Ensure you have the following installed:  
-- **PostgreSQL** with **PostGIS** extension  
+- **PostgreSQL** with **PostGIS** extension
+- **pgAdmin** or **SQL Shell(psql)**
 - **ArcGIS Pro**  
